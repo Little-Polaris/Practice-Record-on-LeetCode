@@ -18,31 +18,17 @@ public:
         set<string> s;
         for (auto i : t)
         {
-            stack<int> stk;
-            string str = i;
-            for (int j = 0; j < i.size(); j++)
+            for (auto it = i.begin(); it != i.end(); it++)
             {
-                if (i[j] == '(')
-                {
-                    stk.push(j);
-                }
-                else if (i[j] == ')')
-                {
-                    str.insert(stk.top() + 1, 1, '(');
-                    str.insert(j + 1, 1, ')');
-                    s.insert(str);
-                    str = i;
-                    stk.pop();
-                }
+                string str = i;
+                str.insert(it - i.begin(), "()");
+                s.insert(str);
             }
-            s.insert("()" + str);
-            s.insert(str + "()");
-            s.insert("(" + str + ")");
+            s.insert("()" + i);
         }
         t.resize(s.size());
         copy(s.begin(), s.end(), t.begin());
-        return t;
-        
+        return t;  
     }
 };
 
