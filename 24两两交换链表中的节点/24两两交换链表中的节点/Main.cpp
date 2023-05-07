@@ -14,34 +14,28 @@ struct ListNode {
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-        ListNode* re_node = head->next;
-        ListNode* l = head->next;
-        int flag = 1;
-        while (l->next && l->next->next)
+        if (!head)
         {
-            if (flag)
-            {
-                ListNode* former = head;
-                ListNode* latter = head->next;
-                former->next = latter->next;
-                latter->next = former;
-                flag = 0;
-            }
-            else
-            {
-                ListNode* former = head;
-                ListNode* latter = head->next;
-                former->next = latter->next;
-                latter->next = latter->next->next;
-                former->next->next = latter;    
-            }
-            l = l->next;
+            return nullptr;
         }
+        ListNode* re_node = head->next;
+        ListNode* l = head;
+        ListNode* former = l;
+        ListNode* latter = l->next;
+        if (latter)
+        {
+            former->next = swapPairs(latter->next);
+        }
+        else
+        {
+            return former;
+        }
+        latter->next = former;
         return re_node;
     }
 };
 
-int main(int argc, char* argv[])
+int main()
 {
     int n;
     cin >> n;
