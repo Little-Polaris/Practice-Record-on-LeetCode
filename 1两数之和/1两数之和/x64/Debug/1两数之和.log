@@ -1,0 +1,12 @@
+﻿  Main.cpp
+G:\VSproject\力扣\1两数之和\1两数之和\Main.cpp(23,28): warning C4244: “参数”: 从“__int64”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+G:\VSproject\力扣\1两数之和\1两数之和\Main.cpp(25,28): warning C4244: “参数”: 从“__int64”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+  1两数之和.vcxproj -> G:\VSproject\力扣\1两数之和\x64\Debug\1两数之和.exe

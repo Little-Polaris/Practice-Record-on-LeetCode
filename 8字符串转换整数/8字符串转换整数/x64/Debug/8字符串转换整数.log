@@ -1,0 +1,6 @@
+﻿  Main.cpp
+G:\VSproject\力扣\8字符串转换整数\8字符串转换整数\Main.cpp(33,28): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\8字符串转换整数\8字符串转换整数\Main.cpp(37,39): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\8字符串转换整数\8字符串转换整数\Main.cpp(44,28): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\8字符串转换整数\8字符串转换整数\Main.cpp(48,38): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  8字符串转换整数.vcxproj -> G:\VSproject\力扣\8字符串转换整数\x64\Debug\8字符串转换整数.exe

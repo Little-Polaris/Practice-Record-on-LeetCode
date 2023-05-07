@@ -1,0 +1,4 @@
+﻿  Main.cpp
+G:\VSproject\力扣\11盛最多水的容器\11盛最多水的容器\Main.cpp(12,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\VSproject\力扣\11盛最多水的容器\11盛最多水的容器\Main.cpp(36,11): warning C4244: “初始化”: 从“time_t”转换到“int”，可能丢失数据
+  11盛最多水的容器.vcxproj -> G:\VSproject\力扣\11盛最多水的容器\x64\Debug\11盛最多水的容器.exe

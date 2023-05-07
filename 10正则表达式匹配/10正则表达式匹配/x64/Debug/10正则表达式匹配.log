@@ -1,0 +1,4 @@
+﻿  Main.cpp
+G:\VSproject\力扣\10正则表达式匹配\10正则表达式匹配\Main.cpp(51,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\VSproject\力扣\10正则表达式匹配\10正则表达式匹配\Main.cpp(52,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  10正则表达式匹配.vcxproj -> G:\VSproject\力扣\10正则表达式匹配\x64\Debug\10正则表达式匹配.exe

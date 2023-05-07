@@ -1,0 +1,8 @@
+﻿  Main.cpp
+G:\VSproject\力扣\16最接近的三数之和\16最接近的三数之和\Main.cpp(35,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\16最接近的三数之和\16最接近的三数之和\Main.cpp(38,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 130 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  16最接近的三数之和.vcxproj -> G:\VSproject\力扣\16最接近的三数之和\x64\Release\16最接近的三数之和.exe

@@ -1,0 +1,4 @@
+﻿  Main.cpp
+G:\VSproject\力扣\16最接近的三数之和\16最接近的三数之和\Main.cpp(35,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\16最接近的三数之和\16最接近的三数之和\Main.cpp(50,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  16最接近的三数之和.vcxproj -> G:\VSproject\力扣\16最接近的三数之和\x64\Debug\16最接近的三数之和.exe
