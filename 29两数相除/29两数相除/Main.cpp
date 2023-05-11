@@ -5,74 +5,67 @@ using namespace std;
 class Solution {
 public:
     int divide(int dividend, int divisor) {
-        int max = pow(2, 31) - 1;
-        if (dividend == -max - 1 && divisor == 1)
+        if (!dividend)
         {
-            return -max - 1;
+            return 0;
         }
-        if (dividend == max && divisor == 1)
+        if (dividend == divisor)
         {
-            return max;
+            return 1;
         }
-        else if (dividend == max && divisor == -1)
-        {
-            return -max;
-        }
-        int count = 0;
         int flag = 1;
-        int former_over_flow = 0;
-        int latter_over_flow = 0;
-        if (dividend < 0)
+        if (dividend == -pow(2, 31))
         {
-            if (dividend == -max - 1)
-            {
-                former_over_flow = 1;
-                dividend = dividend + 1;
-            }                      
-            dividend = -dividend;
-            flag = -flag;           
+            ;
         }
-        if (divisor < 0)
+        else if (dividend < 0)
         {
-            if (divisor == -max - 1)
-            {
-                latter_over_flow = 1;
-                divisor = divisor + 1;
-            }
-            divisor = -divisor;
+            dividend = -dividend;
             flag = -flag;
         }
-        while (1)
+        if (divisor == -pow(2, 31))
         {
-            dividend -= divisor;
-            if (dividend < 0)
-            {
-                if (flag < 0)
-                {
-                    return -count;
-                }
-                else
-                {
-                    return count;
-                }
-            }
-            count++;
-            if (count == 1)
-            {
-                dividend += former_over_flow;
-                divisor += latter_over_flow;
-            }
-            if (count == max)
-            {
-                return count;
-            }
+            ;
         }
-        return count;
+        else if (divisor < 0)
+        {
+            divisor = -divisor;
+            flag = flag;
+        }
+        int small = divisor;
+        int big = divisor + divisor;
+        int max = pow(2, 31) - 1;
+        int flag1 = 0;
+        int count = 0;
+        while (dividend >= big && max - big > big)        
+        {
+            flag1 = 1;
+            small += small;
+            big += big;
+            count++;
+        }
+        if (flag1)
+        {
+            count = pow(2, count);
+        }
+        while (small <= dividend - divisor && max - small > divisor)
+        {
+            small += divisor;
+            count++;
+        }
+        if (flag == -1)
+        {
+            return -count;
+        }
+        else
+        {
+            return count;
+        }
     }
 };
 
 int main()
 {
-    cout << Solution().divide(pow(2,31)-1,2) << endl;
+    cout << Solution().divide(pow(2,31) - 1, 2) << endl;
 	return 0;
 }
