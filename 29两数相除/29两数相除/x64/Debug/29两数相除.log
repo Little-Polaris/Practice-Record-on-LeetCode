@@ -1,5 +1,11 @@
 ﻿  Main.cpp
-G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(29,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(41,24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(61,41): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(32,35): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(44,35): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(52,27): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(56,24): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(64,32): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(68,35): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(82,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(103,24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+G:\VSproject\力扣\29两数相除\29两数相除\Main.cpp(123,31): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
   29两数相除.vcxproj -> G:\VSproject\力扣\29两数相除\x64\Debug\29两数相除.exe
