@@ -1,0 +1,4 @@
+﻿  Main.cpp
+G:\VSproject\力扣\30串联所有单词的子串\30串联所有单词的子串\Main.cpp(16,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\VSproject\力扣\30串联所有单词的子串\30串联所有单词的子串\Main.cpp(20,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  30串联所有单词的子串.vcxproj -> G:\VSproject\力扣\30串联所有单词的子串\x64\Debug\30串联所有单词的子串.exe
