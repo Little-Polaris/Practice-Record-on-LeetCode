@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <set>
+#include <unordered_map>
 #include <algorithm>
 
 using namespace std;
@@ -9,7 +10,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
-        words = myfunc(words);
+        /*words = myfunc(words);
         vector<int> r_v;
         for (auto i : words)
         {
@@ -27,10 +28,56 @@ public:
         }
         copy(ts.begin(), ts.end(), r_v.begin());
         r_v.resize(ts.size());
+        return r_v;*/
+        if (s.empty())
+        {
+            return vector<int>();
+        }
+        int len = s.length();
+        int w_l = words[0].length();
+        int v_s = words.size();
+        vector<int> r_v;
+        for (int i = 0; i <= len - w_l * v_s; i++)
+        {
+            string ts = s.substr(i, w_l * v_s);
+            int flag = 1;
+            unordered_map<string, int> m;
+            for (auto i : words)
+            {
+                m[i] = 0;
+            }
+            for (auto i : words)
+            {
+                m[i]++;
+            }
+            for (int j = 0; j < ts.size(); j += w_l)
+            {  
+                string word = ts.substr(j, w_l);
+                try
+                {
+                    m.at(word);
+                    m[word]--;
+                    if (m[word] < 0)
+                    {
+                        flag = 0;
+                        break;
+                    }
+                }
+                catch(out_of_range)
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag)
+            {
+                r_v.push_back(i);
+            }
+        }
         return r_v;
     }
 
-    vector<string> myfunc(vector<string> words)
+    /*vector<string> myfunc(vector<string> words)
     {
         if (words.size() == 1)
         {
@@ -48,16 +95,15 @@ public:
             }
         }
         return r_v;
-    }
+    }*/
 };
 
 int main()
 {
-    vector<string> v = { "dhvf","sind","ffsl","yekr","zwzq","kpeo","cila","tfty","modg","ztjg","ybty","heqg","cpwo","gdcj","lnle","sefg","vimw","bxcb" };
-    string s = "pjzkrkevzztxductzzxmxsvwjkxpvukmfjywwetvfnujhweiybwvvsrfequzkhossmootkmyxgjgfordrpapjuunmqnxxdrqrfgkrsjqbszgiqlcfnrpjlcwdrvbumtotzylshdvccdmsqoadfrpsvnwpizlwszrtyclhgilklydbmfhuywotjmktnwrfvizvnmfvvqfiokkdprznnnjycttprkxpuykhmpchiksyucbmtabiqkisgbhxngmhezrrqvayfsxauampdpxtafniiwfvdufhtwajrbkxtjzqjnfocdhekumttuqwovfjrgulhekcpjszyynadxhnttgmnxkduqmmyhzfnjhducesctufqbumxbamalqudeibljgbspeotkgvddcwgxidaiqcvgwykhbysjzlzfbupkqunuqtraxrlptivshhbihtsigtpipguhbhctcvubnhqipncyxfjebdnjyetnlnvmuxhzsdahkrscewabejifmxombiamxvauuitoltyymsarqcuuoezcbqpdaprxmsrickwpgwpsoplhugbikbkotzrtqkscekkgwjycfnvwfgdzogjzjvpcvixnsqsxacfwndzvrwrycwxrcismdhqapoojegggkocyrdtkzmiekhxoppctytvphjynrhtcvxcobxbcjjivtfjiwmduhzjokkbctweqtigwfhzorjlkpuuliaipbtfldinyetoybvugevwvhhhweejogrghllsouipabfafcxnhukcbtmxzshoyyufjhzadhrelweszbfgwpkzlwxkogyogutscvuhcllphshivnoteztpxsaoaacgxyaztuixhunrowzljqfqrahosheukhahhbiaxqzfmmwcjxountkevsvpbzjnilwpoermxrtlfroqoclexxisrdhvfsindffslyekrzwzqkpeocilatftymodgztjgybtyheqgcpwogdcjlnlesefgvimwbxcbzvaibspdjnrpqtyeilkcspknyylbwndvkffmzuriilxagyerjptbgeqgebiaqnvdubrtxibhvakcyotkfonmseszhczapxdlauexehhaireihxsplgdgmxfvaevrbadbwjbdrkfbbjjkgcztkcbwagtcnrtqryuqixtzhaakjlurnumzyovawrcjiwabuwretmdamfkxrgqgcdgbrdbnugzecbgyxxdqmisaqcyjkqrntxqmdrczxbebemcblftxplafnyoxqimkhcykwamvdsxjezkpgdpvopddptdfbprjustquhlazkjfluxrzopqdstulybnqvyknrchbphcarknnhhovweaqawdyxsqsqahkepluypwrzjegqtdoxfgzdkydeoxvrfhxusrujnmjzqrrlxglcmkiykldbiasnhrjbjekystzilrwkzhontwmehrfsrzfaqrbbxncphbzuuxeteshyrveamjsfiaharkcqxefghgceeixkdgkuboupxnwhnfigpkwnqdvzlydpidcljmflbccarbiegsmweklwngvygbqpescpeichmfidgsjmkvkofvkuehsmkkbocgejoiqcnafvuokelwuqsgkyoekaroptuvekfvmtxtqshcwsztkrzwrpabqrrhnlerxjojemcxel";
-    //auto v1 = Solution().findSubstring(s, v);
-    //v = { "ab", "cd", "ef","gh","ij","kl","mn" };
-    auto v1 = Solution().myfunc(v);
+    vector<string> v = { "foo","bar" };
+    string s = "barfoothefoobarman";
+    cout << v.size() << endl;
+    auto v1 = Solution().findSubstring(s, v);
     for (auto i : v1)
     {
         cout << i << " ";
