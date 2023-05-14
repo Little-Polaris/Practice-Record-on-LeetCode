@@ -1,0 +1,4 @@
+﻿  Main.cpp
+G:\VSproject\力扣\32最长有效括号\32最长有效括号\Main.cpp(19,29): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+G:\VSproject\力扣\32最长有效括号\32最长有效括号\Main.cpp(27,33): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+  32最长有效括号.vcxproj -> G:\VSproject\力扣\32最长有效括号\x64\Debug\32最长有效括号.exe
