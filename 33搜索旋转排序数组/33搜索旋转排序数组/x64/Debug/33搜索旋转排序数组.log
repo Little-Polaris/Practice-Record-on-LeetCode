@@ -1,0 +1,5 @@
+﻿  Main.cpp
+G:\VSproject\力扣\33搜索旋转排序数组\33搜索旋转排序数组\Main.cpp(23,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+G:\VSproject\力扣\33搜索旋转排序数组\33搜索旋转排序数组\Main.cpp(40,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+G:\VSproject\力扣\33搜索旋转排序数组\33搜索旋转排序数组\Main.cpp(65,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  33搜索旋转排序数组.vcxproj -> G:\VSproject\力扣\33搜索旋转排序数组\x64\Debug\33搜索旋转排序数组.exe
