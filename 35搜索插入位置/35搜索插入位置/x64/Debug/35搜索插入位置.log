@@ -1,0 +1,3 @@
+﻿  Main.cpp
+G:\VSproject\力扣\35搜索插入位置\35搜索插入位置\Main.cpp(9,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  35搜索插入位置.vcxproj -> G:\VSproject\力扣\35搜索插入位置\x64\Debug\35搜索插入位置.exe
