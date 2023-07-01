@@ -7,61 +7,47 @@ using namespace std;
 class Solution {
 public:
     string multiply(string num1, string num2) {
-        long long n1 = 0, n2 = 0;
-        for (auto& i : num1) {
-            n1 = n1 * 10 + i - '0';
-        }
-        for (auto& i : num2) {
-            n2 = n2 * 10 + i - '0';
-        }
-        if (n1 == 0 || n2 == 0) {
-            return "0";
-        }     
-        long long n11 = n1, n22 = n2;
-        int count1 = 0, count2 = 0;
-        while (n11) {
-            n11 /= 10;
-            count1++;
-        }
-        while (n22) {
-            n22 /= 10;
-            count2++;
-        }
-        vector<vector<int>> outer_v;
-        vector<int> temp(count1 + count2 + 1);
-        outer_v.assign(count2, temp);
-        for (int i = count2 - 1; i >= 0; i--) {
-            long long tempValue = n1 * (num2[i] - '0');
-            for (int j = count1 + i + 1;  j >= 0 && tempValue; j--) {
-                outer_v[i][j] = tempValue % 10;
-                tempValue /= 10;
+        int size1 = num1.size(), size2 = num2.size();
+        int tsize = size1 + size2;
+        vector<int> v(tsize + 1);
+        vector<vector<int>> product(size2, vector<int>(tsize + 1));
+        for (int i = size2 - 1; i >= 0; i--) {
+            for (int j = size1 - 1; j >= 0; j--) {
+                product[size2 - 1 - i][i + j + 2] = (num2[i] - '0') * (num1[j] - '0');
             }
         }
-        vector<int> v(count1 + count2 + 1);
-        for (int i = 0; i < count1 + count2 + 1; i++) {
-            for (int j = 0; j < count2; j++) {
-                v[i] += outer_v[j][i];
+        for (auto it1 = product.begin(); it1 != product.end() - 1; it1++) {
+            for (auto it2 = (*it1).begin(); it2 != (*it1).end(); it2++) {
+                product.back()[it2 - (*it1).begin()] += *it2;
             }
         }
-        for (int i = count1 + count2; i >= 0; i--) {
-            if (v[i] >= 10) {
-                v[i - 1] += v[i] / 10;
-                v[i] %= 10;
+        int flag = 0;
+        do {
+            flag = 0;
+            for (auto it = product.back().rbegin(); it != product.back().rend() - 1; it++) {
+                if (*it >= 10) {
+                    *(it + 1) += *it / 10;
+                    *it = *it % 10;
+                    flag = 1;
+                }
             }
-        }
+        } while (flag);
         string str;
-        str.resize(count1 + count2 + 1);
-        for (int i = 0; i < count1 + count2 + 1; i++) {
-            str[i] = v[i] + '0';
+        str.resize(tsize + 1);
+        for (auto it = product.back().rbegin(); it != product.back().rend(); it++) {
+            str[tsize - (it - product.back().rbegin())] = *it + '0';
         }
         while (str.front() == '0') {
             str.erase(str.begin());
+            if (str.empty()) {
+                return "0";
+            }
         }
         return str;
     }
 };
 
 int main() {
-    cout << Solution().multiply("999", "999") << endl;
+    cout << Solution().multiply("99999999999999999999999999999", "9999999999") << endl;
 	return 0;
 }
